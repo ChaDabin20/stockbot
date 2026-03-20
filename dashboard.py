@@ -177,9 +177,14 @@ st.markdown("""
     footer {visibility: hidden;}
     div[data-testid="stDecoration"] {display: none;}
     [data-testid="stStatusWidget"] {display: none;}
-    #MainMenu {visibility: hidden;}
-    /* 헤더는 숨기지 않음 - 사이드바 열기 버튼이 헤더 안에 있어 숨기면 메뉴를 열 수 없음 */
-    header[data-testid="stHeader"] {background: transparent !important; border-bottom: none !important;}
+    /* 헤더: 앱 배경색과 맞추고 사이드바 토글 버튼은 보이게 유지 */
+    header[data-testid="stHeader"] {
+        background: #0e1117 !important;
+        border-bottom: 1px solid #2a3441 !important;
+    }
+    /* Streamlit 워터마크/브랜딩만 숨기기 */
+    header[data-testid="stHeader"] a[href*="streamlit"] {display: none !important;}
+    div[data-testid="stMainMenuPopover"] {display: none !important;}
 </style>
 """, unsafe_allow_html=True)
 
