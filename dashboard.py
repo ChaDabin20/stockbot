@@ -178,7 +178,8 @@ st.markdown("""
     div[data-testid="stDecoration"] {display: none;}
     [data-testid="stStatusWidget"] {display: none;}
     #MainMenu {visibility: hidden;}
-    header[data-testid="stHeader"] {display: none !important;}
+    /* 헤더는 숨기지 않음 - 사이드바 열기 버튼이 헤더 안에 있어 숨기면 메뉴를 열 수 없음 */
+    header[data-testid="stHeader"] {background: transparent !important; border-bottom: none !important;}
 </style>
 """, unsafe_allow_html=True)
 
